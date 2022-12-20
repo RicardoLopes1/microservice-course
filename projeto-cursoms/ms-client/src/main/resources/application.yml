@@ -16,4 +16,13 @@ spring:
 
 # port
 server:
-  port: 8080
+  port: 0
+
+# eureka config
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: false
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
